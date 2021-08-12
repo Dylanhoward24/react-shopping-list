@@ -1,10 +1,10 @@
 import React from 'react';
 import Header from '../Header/Header.jsx';
 import ShoppingList from '../ShoppingList/ShoppingList';
+import ItemForm from '../ItemForm/ItemForm'
 import {useState, useEffect} from 'react';
 import axios from 'axios';
 import './App.css';
-
 
 function App() {
 
@@ -23,16 +23,26 @@ function App() {
         }).catch(error =>{
             console.log('Get Fetch Data');
         });
+    }
 
-}
-
-
-
-
-
+    const postItem = (newItem) => {
+        axios({
+            method: 'POST',
+            url: '/list',
+            data: newItem
+        }).then(response => {
+            console.log('response is', response);
+            fetchList();
+        }).catch(error =>{
+            console.log('Post Failed', error);
+        });
+    }
+   
     return (
         <div className="App">
             <Header />
+            <ItemForm 
+                onAddItem={postItem}/>
             <main>
                 <p>Under Construction...</p>
             <ShoppingList 

@@ -1,33 +1,34 @@
 import React from 'react'
 
-function ShoppingList(shoppingList) {
+function ShoppingList({shoppingList}) {
                     // ^ response.data from app.jsx
     //Need onButton Click 
-    const onButtonClick ={
+    // const onButtonClick ={
 
-    }
+    // }
 
 
 
     return (
         <div>
             <h1> Shopping List</h1>
-            <button onClick={onButtonClick}>Reset</button>
-            <button onClick={onButtonClick}>Clear</button>
+
+            {/* make these do something */}
+            <button>Reset</button>
+            <button>Clear</button>
+
+            {console.log(shoppingList)}
             
-            {/* {shoppingList.map((item) => (
             <ul>
-                {item.name}
-                {item.quantity}
-                {item.unit}
+                {shoppingList.map((item) => (
+                    <li>
+                        {item.name}
+                        {item.quantity}
+                        {item.unit}
+                    </li>
+                 ))}
             </ul>
-            ))} */}
-            
-            
-
-
-
-           
+                
             
         </div>
     );
