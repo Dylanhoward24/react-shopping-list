@@ -3,7 +3,7 @@ const router = express.Router();
 const pool = require('../modules/pool.js');
 
 // TODO - Add routes here...
-router.get('/', (req,res) => {
+router.get('/', (req, res) => {
     const sqlText = `
         SELECT * FROM "shopping"
     `;
