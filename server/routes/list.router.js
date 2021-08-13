@@ -30,4 +30,21 @@ router.post('/', (req, res) => {
         });
 });
 
+router.delete('/:id', (req, res) => {
+    const sqlText = `
+        DELETE FROM "shopping"
+        WHERE "id" = $1
+    `;
+    const sqlParams = [
+        req.params.id
+    ];
+
+    pool.query(sqlText, sqlParams)
+        .then((dbRes) => {
+            res.sendStatus(200); // OK
+        }).catch((error) => {
+            res.sendStatus(500); // error msg
+        });
+});
+
 module.exports = router;

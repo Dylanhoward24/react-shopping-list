@@ -37,6 +37,21 @@ function App() {
             console.log('Post Failed', error);
         });
     }
+
+    const onRemove = (id) => {
+        // console.log('its working');
+        // console.log(id);
+
+        axios({
+            method: 'DELETE',
+            url: '/list/'+id
+        }).then((response) => {
+            console.log('response is', response);
+            fetchList();
+        }).catch((error) => {
+            console.log('DELETE /list error', error);
+        });
+    }
    
     return (
         <div className="App">
@@ -47,8 +62,8 @@ function App() {
                 <p>Under Construction...</p>
             <ShoppingList 
                 shoppingList={shoppingList}
+                onRemove={onRemove}
             />
-            
             </main>
         </div>
     );

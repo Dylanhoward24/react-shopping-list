@@ -21,7 +21,7 @@ Each item can have a:
 - Quantity - allow for decimal numbers (required)
 - Unit - text, allow up to 20 characters (optional)
 
-When the page first loads, all the existing items should be displayed with the quantity & unit combined together for display. Each item should also have an option to remove it from the list or mark it as purchased. Once purchased, the buttons should be hidden and the item should show as "Purchased". 
+[x]When the page first loads, all the existing items should be displayed with the quantity & unit combined together for display. Each item should also have an option to remove it from the list or mark it as purchased. Once purchased, the buttons should be hidden and the item should show as "Purchased". 
 
 Items should initially appear alphabetically, but as items are marked purchased they should sort to the end of the list.
 

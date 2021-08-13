@@ -1,6 +1,8 @@
 import React from 'react'
 import './ShoppingList.css';
-function ShoppingList({shoppingList}) {
+import ShoppingItem from '../ShoppingItem/ShoppingItem';
+
+function ShoppingList({shoppingList, onRemove }) {
                     // ^ response.data from app.jsx
     //Need onButton Click 
     // const onButtonClick ={
@@ -21,19 +23,11 @@ function ShoppingList({shoppingList}) {
             
             <ul>
                 {shoppingList.map((item) => (
-                    <li>
-                        <div class= "itemName">
-                        {item.name}
-                        </div>
-                        <div class="qtyUnit">
-                        {item.quantity}
-                        {item.unit}
-                        </div>
-                        <div class="buyRemove">
-                        <button>Buy</button>
-                        <button>Remove</button>
-                        </div>
-                    </li>
+                    <ShoppingItem
+                        key={item.id}
+                        item={item}
+                        onRemove={onRemove}
+                    />
                  ))}
             </ul>
                 
